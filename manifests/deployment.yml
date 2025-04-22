@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vgeorgievpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vgeorgievpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: vgeorgievpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: vgeorgievpipelinesjavascriptdocker 
+          image: mycontainerregistrytestpipeline.azurecr.io/vgeorgievpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
